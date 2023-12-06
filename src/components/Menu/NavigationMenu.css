@@ -1,0 +1,64 @@
+.Navigation {
+    margin: 10px;
+    font-size: 0.875rem;
+    width: 150px;
+}
+
+li{
+    display: flex;
+    font-size: x-small;
+}
+
+.ulNavigation li {
+    padding: 5px;
+}
+
+.iconsLeft::before {
+    content: '\2192';
+    margin-right: 5px;
+}
+
+.userStudent {
+    list-style: none;
+    padding: 0;
+}
+
+.typeUser {
+    font-size: 10px;
+    margin: 0;
+    padding-top: 0;
+}
+
+.menu-ping-mark {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-left: 5px;
+    background-color: #fe7c96;
+    color: white;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    justify-content: center;
+    font-size: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: #000000;
+}
+
+.icons {
+    margin-left: auto;
+}
+
+.userIcon{
+  margin-top: 17px;
+}
+
+nav {
+    position: fixed;
+    top: 10px;
+    left: 0;
+    width: 150px;
+}
