@@ -5,7 +5,8 @@ import {Box} from "@mui/material";
 import {useRoutes} from "react-router-dom";
 
 const Router = () => useRoutes([
-    { path: '', element: <div>Dashboard</div> }
+    { path: '', element: <div>Dashboard</div> },
+    { path: 'js-course', element: <div>JS Course</div> },
 ])
 
 function App() {

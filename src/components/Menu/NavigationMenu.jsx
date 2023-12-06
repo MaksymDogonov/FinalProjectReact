@@ -5,8 +5,10 @@ import HomeIcon from '@mui/icons-material/Home';
 import PsychologyAltIcon from '@mui/icons-material/PsychologyAlt';
 import PsychologyIcon from '@mui/icons-material/Psychology';
 import {useSelector} from "react-redux";
+import {useNavigate} from "react-router-dom";
 
 const NavigationMenu = () => {
+    const navigate = useNavigate()
     const user = useSelector((state) => state.user.fullName)
     const role = useSelector((state) => state.user.role)
     const coursesNumber = useSelector((state) => state.user.coursesNumber)
@@ -25,6 +27,7 @@ const NavigationMenu = () => {
         arrow.classList.toggle('rotate');
     };
 
+
     return (
         <nav className='Navigation'>
             <ul className='ulNavigation' style={{listStyleType: 'none', padding: 0}}>
@@ -36,7 +39,7 @@ const NavigationMenu = () => {
                     <AccountCircleIcon sx={{ fontSize: 20 }}/>
                 </div>
                 <li>
-                    <a href=""><span>Дашборд</span></a>
+                    <div onClick={() => navigate('/')}><span>Дашборд</span></div>
                     <span className='icons'><HomeIcon sx={{ fontSize: 20 }}/></span>
                 </li>
                 <li onClick={toggleMenu3}>JS Course
@@ -48,7 +51,7 @@ const NavigationMenu = () => {
                 {isMenu3Open && (
                     <ul style={{listStyleType: 'none', padding: 0}}>
                         <li className='iconsLeft'>
-                            <a href="">Уроки</a>
+                            <div onClick={() => navigate('/js-course')}>Уроки</div>
                         </li>
                         <li className='iconsLeft'>
                             <a href="">Домашки</a>
