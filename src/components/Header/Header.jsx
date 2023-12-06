@@ -1,9 +1,10 @@
 import './header.css'
 import {useState} from 'react';
+import {useSelector} from "react-redux";
 
 const Header = () => {
-    const user = 'Maksym Dogonov'
-    const [isFullscreen, setIsFullscreen] = useState(false);
+    const user = useSelector((state) => state.user.fullName)
+    const [isFullscreen, setIsFullscreen] = useState(document.fullscreen);
 
     const handleFullscreenToggle = () => {
         const element = document.documentElement;
@@ -17,6 +18,7 @@ const Header = () => {
         }
         setIsFullscreen(!isFullscreen);
     };
+
     return (
         <header className="header">
             <div className="logo">
@@ -25,10 +27,6 @@ const Header = () => {
                          alt="Logo"/>
                 </a>
             </div>
-            <button className="menu-btn">
-                <img src="https://cdn.icon-icons.com/icons2/2024/PNG/96/lines_menu_burger_icon_123889.png"
-                     alt="burger_menu"/>
-            </button>
             <ul className='user'>
                 <li>{user}</li>
                 <li>
