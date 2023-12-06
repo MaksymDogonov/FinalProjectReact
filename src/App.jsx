@@ -12,9 +12,9 @@ function App() {
   return (
       <Box sx={{ display: 'flex', flexDirection: 'column', width: '100%', height: '100%' }}>
           <Header/>
-          <Box sx={{ pt: '40px', display: 'flex', flex: 1 }}>
+          <Box sx={{ pt: '70px', display: 'flex', flex: 1 }}>
               <NavigationMenu/>
-              <Box sx={{ display: 'flex', flex: 1, background: '#f2edf3', ml: '170px', p: '44px 36px' }}>
+              <Box sx={{ display: 'flex', flex: 1, background: '#f2edf3', ml: '270px', p: '44px 36px' }}>
                   <Router />
               </Box>
           </Box>

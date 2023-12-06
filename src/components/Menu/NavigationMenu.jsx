@@ -21,26 +21,28 @@ const NavigationMenu = () => {
 
     const toggleMenu4 = () => {
         setIsMenu4Open(!isMenu4Open);
+        const arrow = document.querySelectorAll("#arrow");
+        arrow.classList.toggle('rotate');
     };
-
 
     return (
         <nav className='Navigation'>
             <ul className='ulNavigation' style={{listStyleType: 'none', padding: 0}}>
-                <div className='dasbord'>
+                <div className='dashbord'>
                     <div>
-                        <div>{user}</div>
+                        <div className='userName'>{user}</div>
                         <div className='typeUser'>{role}</div>
                     </div>
-                    <AccountCircleIcon sx={{ fontSize: 12 }}/>
+                    <AccountCircleIcon sx={{ fontSize: 20 }}/>
                 </div>
                 <li>
                     <a href=""><span>Дашборд</span></a>
-                    <span className='icons'><HomeIcon sx={{ fontSize: 12 }}/></span>
+                    <span className='icons'><HomeIcon sx={{ fontSize: 20 }}/></span>
                 </li>
                 <li onClick={toggleMenu3}>JS Course
                     <span className="menu-ping-mark ">{coursesNumber}</span>
-                    <span className='icons'><PsychologyAltIcon sx={{ fontSize: 12 }}/></span>
+                    <span className="arrow icons">&lt;</span>
+                    <span><PsychologyAltIcon sx={{ fontSize: 20 }}/></span>
                 </li>
 
                 {isMenu3Open && (
@@ -53,9 +55,10 @@ const NavigationMenu = () => {
                         </li>
                     </ul>
                 )}
-                <li onClick={toggleMenu4}>React
+                <li className="iconsArrow" onClick={toggleMenu4}>React Course
                     <span className="menu-ping-mark ">{reactCourse}</span>
-                    <span className='icons'><PsychologyIcon sx={{ fontSize: 12 }}/></span>
+                    <span className="arrow icons">&lt;</span>
+                    <span><PsychologyIcon sx={{ fontSize: 20 }}/></span>
                 </li>
                 {isMenu4Open && (
                     <ul style={{listStyleType: 'none', padding: 0}}>
@@ -67,7 +70,9 @@ const NavigationMenu = () => {
                         </li>
                     </ul>
                 )}
-                <li></li>
+                <li className='technicalArticles'>
+                    <a href=""><span>Технические статьи</span></a>
+                </li>
             </ul>
         </nav>
     );

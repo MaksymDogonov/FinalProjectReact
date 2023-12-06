@@ -1,16 +1,18 @@
 .Navigation {
-    padding: 10px;
+
+    margin-left: 30px;
+    padding-right: 10px;
     font-size: 0.875rem;
-    width: 150px;
+    width: 220px;
 }
 
-li{
+li {
     display: flex;
-    font-size: x-small;
+    font-size: large;
 }
 
 .ulNavigation li {
-    padding: 5px 0;
+    margin: 20px 0;
 }
 
 .iconsLeft::before {
@@ -23,24 +25,28 @@ li{
     padding: 0;
 }
 
+.userName {
+    font-weight: bold;
+}
+
 .typeUser {
-    font-size: 10px;
-    margin: 0;
+    font-size: 15px;
+    margin-top: 5px;
     padding-top: 0;
 }
 
 .menu-ping-mark {
-    width: 12px;
-    height: 12px;
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
-    margin-left: 5px;
+    margin-left: 10px;
     background-color: #fe7c96;
     color: white;
     display: flex;
     align-items: center;
     font-weight: bold;
     justify-content: center;
-    font-size: 10px;
+    font-size: 17px;
 }
 
 a {
@@ -52,17 +58,41 @@ a {
     margin-left: auto;
 }
 
-.userIcon{
-  margin-top: 17px;
+.userIcon {
+    margin-top: 17px;
 }
 
 nav {
     position: fixed;
-    width: 150px;
+    width: 250px;
 }
 
-.dasbord {
+.dashbord {
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.technicalArticles {
+    padding: 10px 0;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    border-color: #d4d4d4;
+}
+
+.arrow {
+    margin-left: auto;
+    transition: transform 0.5s ease-in-out;
+}
+
+.rotate {
+    transform: rotate(90deg);
+}
+
+nav span {
+    /*margin-left: auto;*/
+}
+
+.iconsArrow {
+    margin-left: -4px;
 }
