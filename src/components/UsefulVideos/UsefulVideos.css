@@ -1,0 +1,25 @@
+.videoBox {
+    padding: 40px;
+    background-color: #ffffff;
+    border-radius: 5px;
+}
+
+.videoIcon {
+    width: 40px;
+    border-radius: 15%
+}
+
+.videoElement {
+    display: flex;
+    align-items: center;
+}
+
+.videoText {
+    margin: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.videoElementBox {
+    margin-bottom: 40px;
+}

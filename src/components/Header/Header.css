@@ -1,11 +1,12 @@
 header {
-    margin: 10px 30px;
+    padding: 10px 30px;
     display: flex;
     height: 70px;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
+    background-color: white;
 }
 .logo{
     width: 100px;
@@ -26,7 +27,7 @@ header {
     padding: 0;
     display: flex;
     justify-content: space-between;
-    margin: auto 0 32px auto;
+    margin: auto 0 auto auto;
     max-width: 100%;
     text-align: center;
 }

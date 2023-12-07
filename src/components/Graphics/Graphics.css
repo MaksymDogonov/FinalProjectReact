@@ -1,0 +1,26 @@
+.leftGraphic {
+    width: 48%;
+    background: #fff;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.graphicsBox {
+    margin-bottom: 40px;
+    justify-content: space-between;
+    display: flex;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.rightGraphic {
+    width: 49%;
+    background: #fff;
+    border-radius: 5px;
+}
+
+.graphicsText {
+    margin-left: 30px;
+    margin-top: 20px;
+    font-weight: bold;
+}

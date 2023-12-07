@@ -1,0 +1,37 @@
+.reactBox {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 40px;
+}
+
+.reactIcon {
+    width: 40px;
+    border-radius: 15%
+}
+
+.reactElement {
+    display: flex;
+    align-items: center;
+}
+
+.reactText {
+    margin: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+.buttonInColumn {
+    width: 40px;
+    height: 40px;
+    margin-left: auto;
+}
+
+.nameColemn {
+    max-width: 100%;
+}
+
+/*.btnsColumn {*/
+/*    margin-right: 40px;*/
+/*}*/

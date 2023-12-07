@@ -9,9 +9,10 @@ import {useQuery} from "react-query";
 import axios from "axios";
 import {useDispatch} from "react-redux";
 import {SET_JS_COURSE_HOMEWORKS, SET_JS_COURSE_LESSONS} from "./store/store.js";
+import DashboardPage from "./components/DashboardPage/DashboardPage.jsx";
 
 const Router = () => useRoutes([
-    { path: '', element: <div>Dashboard</div> },
+    { path: '', element: <DashboardPage/> },
     { path: ':courseKey', children: [
             { path: '', element: <Navigate to="lessons" replace /> },
             { path: 'lessons', children: [
@@ -41,11 +42,11 @@ function App() {
     })
 
   return (
-      <Box sx={{ display: 'flex', flexDirection: 'column', width: '100%', height: '100%' }}>
-          <Header/>
-          <Box sx={{ pt: '70px', display: 'flex', flex: 1 }}>
+      <Box className='appBox' sx={{ display: 'flex', flexDirection: 'column', width: '100%', height: '100%' }}>
+          <Header className='headerBox'/>
+          <Box sx={{ pt: '90px', display: 'flex', flex: 1 }}>
               <NavigationMenu/>
-              <Box sx={{ display: 'flex', flex: 1, background: '#f2edf3', ml: '270px', p: '44px 36px' }}>
+              <Box sx={{ display: 'flex', flex: 1, background: '#f2edf3', ml: '250px', p: '44px 34px', flexDirection: 'column', width: '100%' }}>
                   <Router />
               </Box>
           </Box>
