@@ -22,13 +22,38 @@ const lessonsRating = [
     { name: 'Yosyp Chorniy', points: 4 },
 ]
 
+const jsCourse = []
+
+const jsCourseHomeworks = []
+
+export const SET_JS_COURSE_LESSONS = 'SET_JS_COURSE_LESSONS'
+export const SET_JS_COURSE_HOMEWORKS = 'SET_JS_COURSE_HOMEWORKS'
+
 export const store = createStore(
     combineReducers({
         user: (state = user) => state,
         lessonsRating: (state = user) => state,
+        jsCourse: (state = jsCourse, action) => {
+            switch (action.type) {
+                case SET_JS_COURSE_LESSONS:
+                    return [...action.payload]
+                default:
+                    return state
+            }
+        },
+        jsCourseHomeworks: (state = jsCourseHomeworks, action) => {
+            switch (action.type) {
+                case SET_JS_COURSE_HOMEWORKS:
+                    return [...action.payload]
+                default:
+                    return state
+            }
+        },
     }),
     {
         user,
         lessonsRating,
+        jsCourse,
+        jsCourseHomeworks,
     },
 )

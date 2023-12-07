@@ -1,0 +1,15 @@
+.divider {
+    border: 1px solid #ebedf2;
+    margin: 20px 0;
+}
+
+.card-wrapper {
+    padding: 40px;
+    flex: 0 0 27%;
+    border-radius: 5px;
+    position: relative;
+}
+
+.card-title {
+    padding-top: 10px;
+}
