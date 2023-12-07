@@ -19,11 +19,13 @@ const NavigationMenu = () => {
 
     const toggleMenu3 = () => {
         setIsMenu3Open(!isMenu3Open);
+        const arrow = document.querySelector(".arrow1");
+        arrow.classList.toggle('rotate');
     };
 
     const toggleMenu4 = () => {
         setIsMenu4Open(!isMenu4Open);
-        const arrow = document.querySelectorAll("#arrow");
+        const arrow = document.querySelector(".arrow2");
         arrow.classList.toggle('rotate');
     };
 
@@ -31,20 +33,20 @@ const NavigationMenu = () => {
     return (
         <nav className='Navigation'>
             <ul className='ulNavigation' style={{listStyleType: 'none', padding: 0}}>
-                <div className='dashbord'>
+                <li className='dashbord'>
                     <div>
                         <div className='userName'>{user}</div>
                         <div className='typeUser'>{role}</div>
                     </div>
                     <AccountCircleIcon sx={{ fontSize: 20 }}/>
-                </div>
+                </li>
                 <li>
                     <div onClick={() => navigate('/')}><span>Дашборд</span></div>
                     <span className='icons'><HomeIcon sx={{ fontSize: 20 }}/></span>
                 </li>
                 <li onClick={toggleMenu3}>JS Course
                     <span className="menu-ping-mark ">{coursesNumber}</span>
-                    <span className="arrow icons">&lt;</span>
+                    <span className="arrow arrow1 icons">&lt;</span>
                     <span><PsychologyAltIcon sx={{ fontSize: 20 }}/></span>
                 </li>
 
@@ -61,7 +63,7 @@ const NavigationMenu = () => {
 
                 <li className="iconsArrow" onClick={toggleMenu4}>React Course
                     <span className="menu-ping-mark ">{reactCourse}</span>
-                    <span className="arrow icons">&lt;</span>
+                    <span className="arrow arrow2 icons">&lt;</span>
                     <span><PsychologyIcon sx={{ fontSize: 20 }}/></span>
                 </li>
                 {isMenu4Open && (

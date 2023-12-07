@@ -46,7 +46,7 @@ function App() {
           <Header className='headerBox'/>
           <Box sx={{ pt: '90px', display: 'flex', flex: 1 }}>
               <NavigationMenu/>
-              <Box sx={{ display: 'flex', flex: 1, background: '#f2edf3', ml: '270px', p: '44px 34px', flexDirection: 'column', width: '100%' }}>
+              <Box sx={{ display: 'flex', flex: 1, background: '#f2edf3', ml: '250px', p: '44px 34px', flexDirection: 'column', width: '100%' }}>
                   <Router />
               </Box>
           </Box>

@@ -43,10 +43,16 @@ const JsCourseButtonComponent = ({record}) => {
 
 const titles = {
     'jsCourse': 'JS Course / Уроки',
+    'reactCourse': 'JS Course / Уроки',
 }
 
 const components = {
     'jsCourse': {
+        ChipComponent: JsCourseChipComponent,
+        DetailsComponent: JsCourseDetailsComponent,
+        ButtonComponent: JsCourseButtonComponent,
+    },
+    'reactCourse': {
         ChipComponent: JsCourseChipComponent,
         DetailsComponent: JsCourseDetailsComponent,
         ButtonComponent: JsCourseButtonComponent,

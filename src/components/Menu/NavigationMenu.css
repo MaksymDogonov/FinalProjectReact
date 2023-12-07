@@ -1,14 +1,13 @@
-.Navigation {
-
-    margin-left: 30px;
-    padding-right: 10px;
+nav.Navigation {
+    position: fixed;
+    width: 250px;
     font-size: 0.875rem;
-    width: 220px;
 }
 
-li {
+nav.Navigation li {
     display: flex;
     font-size: large;
+    padding: 0 20px;
 }
 
 .ulNavigation li {
@@ -62,11 +61,6 @@ a {
     margin-top: 17px;
 }
 
-nav {
-    position: fixed;
-    width: 250px;
-}
-
 .dashbord {
     display: flex;
     align-items: center;
@@ -74,7 +68,8 @@ nav {
 }
 
 .technicalArticles {
-    padding: 10px 0;
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
     border-top: 1px solid;
     border-bottom: 1px solid;
     border-color: #d4d4d4;
@@ -86,12 +81,9 @@ nav {
 }
 
 .rotate {
-    transform: rotate(90deg);
+    transform: rotate(-90deg);
 }
 
-nav span {
-    /*margin-left: auto;*/
-}
 
 .iconsArrow {
     margin-left: -4px;
