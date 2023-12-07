@@ -22,7 +22,7 @@ const Header = () => {
     return (
         <header className="header">
             <div className="logo">
-                <a href="" target="">
+                <a href="/" target="">
                     <img src="https://lms.junjun.io/wp-content/themes/Junjun-lms/assets/images/logo.svg"
                          alt="Logo"/>
                 </a>
