@@ -10,10 +10,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@canvasjs/charts": "^3.7.30",
+    "@canvasjs/stockcharts": "^1.7.30",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@fontsource/roboto": "^5.0.8",
     "@mui/icons-material": "^5.14.19",
+    "@mui/joy": "^5.0.0-beta.17",
     "@mui/material": "^5.14.20",
     "@reduxjs/toolkit": "^2.0.1",
     "chart.js": "^4.4.1",
@@ -22,7 +25,9 @@
     "react-dom": "^18.2.0",
     "react-redux": "^9.0.1",
     "react-router-dom": "^6.20.1",
-    "redux": "^5.0.0"
+    "react-slick": "^0.29.0",
+    "redux": "^5.0.0",
+    "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
     "@types/react": "^18.2.37",

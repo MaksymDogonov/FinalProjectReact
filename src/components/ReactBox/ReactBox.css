@@ -1,0 +1,24 @@
+.reactBox {
+    background: #fff;
+    padding: 20px;
+}
+
+.reactIcon {
+    width: 40px;
+    border-radius: 15%
+}
+
+.reactElement {
+    display: flex;
+    align-items: center;
+}
+
+.reactText {
+    margin: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.reactBox {
+    margin-bottom: 40px;
+}

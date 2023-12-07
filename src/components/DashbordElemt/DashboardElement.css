@@ -1,0 +1,19 @@
+.dashboardIcon {
+    width: 40px;
+    border-radius: 15%
+}
+
+.dashboardElement {
+    display: flex;
+    align-items: center;
+}
+
+.dashboardText {
+    margin: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.dashboardBox {
+    margin-bottom: 40px;
+}
