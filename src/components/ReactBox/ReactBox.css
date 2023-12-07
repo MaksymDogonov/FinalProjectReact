@@ -7,7 +7,9 @@
 
 .reactIcon {
     width: 40px;
-    border-radius: 15%
+    border-radius: 15%;
+    margin-top: 25px;
+    margin-left: 25px;
 }
 
 .reactElement {
@@ -31,7 +33,3 @@
 .nameColemn {
     max-width: 100%;
 }
-
-/*.btnsColumn {*/
-/*    margin-right: 40px;*/
-/*}*/

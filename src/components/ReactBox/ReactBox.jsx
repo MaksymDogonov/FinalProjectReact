@@ -3,6 +3,7 @@ import Table from '@mui/joy/Table';
 import {Box} from "@mui/material";
 import Button from '@mui/joy/Button';
 import {useSelector} from "react-redux";
+import {store} from "../../store/store.js";
 
 const ReactBox = () => {
 
@@ -18,8 +19,9 @@ const ReactBox = () => {
         createData('Gingerbread', 356, 16.0, 49, 3.9),
     ];
 
-    const reactCourse = useSelector((state) => state.reactCourse);
-    console.log(reactCourse)
+    // const reactCourseArray = useSelector(state => state.reactCourse);
+    const reactCourse = store.getState().reactCourse;
+    console.log(reactCourse);
 
     return (
         <Box className='reactBox'>
