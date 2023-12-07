@@ -4,6 +4,7 @@ import SocialNetworks from "../SocialNetworks/SocialNetworks.jsx";
 import Graphics from "../Graphics/Graphics.jsx"
 import ReactBox from "../ReactBox/ReactBox.jsx";
 import UsefulVideos from "../UsefulVideos/UsefulVideos.jsx";
+import {Footer} from "../Footer/Footer.jsx";
 
 const DashboardPage = () => {
 
@@ -14,6 +15,7 @@ const DashboardPage = () => {
             <Graphics/>
             <ReactBox/>
             <UsefulVideos/>
+            <Footer/>
         </div>
     )
 }

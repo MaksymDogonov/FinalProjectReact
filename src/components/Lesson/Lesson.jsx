@@ -5,6 +5,7 @@ import {useParams} from "react-router-dom";
 import {useMemo} from "react";
 import ReactPlayer from 'react-player/youtube'
 import {getCourseExtras} from "../../utils";
+import {Footer} from "../Footer/Footer.jsx";
 
 const Lesson = () => {
     const { lessonId, courseKey } = useParams()
@@ -52,6 +53,7 @@ const Lesson = () => {
                     )}
                 </Box>
             )}
+            <Footer/>
         </Box>
     )
 }
