@@ -1,0 +1,39 @@
+.lesson-wrapper {
+    width: 100%;
+}
+
+.lesson-title {
+    padding: 16px 40px;
+}
+
+.lesson-video-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+    margin-top: 40px;
+}
+
+.lesson-additional-resources-wrapper {
+    width: 30%;
+    padding: 40px;
+    margin-top: 40px;
+}
+
+.lesson-additional-resources-list {
+    padding: 0;
+}
+
+.lesson-additional-resources-list li {
+    display: list-item;
+    font-size: 14px;
+}
+
+.lesson-additional-resources-list a {
+    color: #b66dff;
+}
+
+.lesson-homeworks-wrapper {
+    width: 50%;
+    padding: 40px;
+    margin-top: 40px;
+}
