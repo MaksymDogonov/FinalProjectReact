@@ -77,7 +77,9 @@ const NavigationMenu = () => {
                     </ul>
                 )}
                 <li className='technicalArticles'>
-                    <a href=""><span>Технические статьи</span></a>
+                    <div onClick={() => navigate('/articles')}>
+                        <span>Технические статьи</span>
+                    </div>
                 </li>
             </ul>
         </nav>

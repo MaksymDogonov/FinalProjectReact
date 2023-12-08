@@ -1,15 +1,10 @@
-.items-list {
-    display: flex;
-    flex-direction: column;
-}
-
-.items-list-header {
+.article-header {
     display: flex;
     align-items: center;
     margin-bottom: 24px;
 }
 
-.items-list-icon-wrapper {
+.article-icon-wrapper {
     display: inline-block;
     width: 36px;
     height: 36px;
@@ -20,16 +15,17 @@
     background: linear-gradient(to right, #da8cff, #9a55ff) !important;
 }
 
-.items-list-icon--lessons:before {
-    content: "\F31E";
-    content: "JS";
-    color: white;
-    line-height: 45px;
+.article-content-wrapper {
+    padding: 40px;
 }
 
-.items-list-records {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+.article-content-element {
+    margin-bottom: 16px;
+ }
+
+.article-content-element code {
+    background-color: #e8eff4;
+    display: block;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
 }
