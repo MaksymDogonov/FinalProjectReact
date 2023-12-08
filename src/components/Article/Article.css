@@ -1,0 +1,31 @@
+.article-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.article-icon-wrapper {
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    border-radius: 4px;
+    margin-right: 8px;
+    text-align: center;
+    box-shadow: 0px 3px 8.3px 0.7px rgba(163, 93, 255, 0.35);
+    background: linear-gradient(to right, #da8cff, #9a55ff) !important;
+}
+
+.article-content-wrapper {
+    padding: 40px;
+}
+
+.article-content-element {
+    margin-bottom: 16px;
+ }
+
+.article-content-element code {
+    background-color: #e8eff4;
+    display: block;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+}

@@ -1,34 +1,83 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import Header from './components/Header/Header.jsx'
+import NavigationMenu from './components/Menu/NavigationMenu.jsx'
+import {Box} from "@mui/material";
+import {Navigate, useRoutes} from "react-router-dom";
+import Lesson from "./components/Lesson/Lesson";
+import Lessons from "./components/Lessons/Lessons";
+import {useQueries} from "react-query";
+import axios from "axios";
+import {useDispatch} from "react-redux";
+import {SET_JS_COURSE_HOMEWORKS, SET_JS_COURSE_LESSONS, SET_REACT_COURSE_LESSONS, SET_REACT_COURSE_HOMEWORKS} from "./store/store.js";
+import DashboardPage from "./components/DashboardPage/DashboardPage.jsx";
+import Articles from "./components/Articles/Articles";
+import Article from "./components/Article/Article";
+import {Footer} from "./components/Footer/Footer.jsx";
+import Homeworks from "./components/Homeworks/Homeworks.jsx";
+
+
+const Router = () => useRoutes([
+    { path: '', element: <DashboardPage/> },
+    { path: ':courseKey', children: [
+            { path: '', element: <Navigate to="lessons" replace /> },
+            { path: 'lessons', children: [
+                    { path: '', element: <Lessons /> },
+                    { path: ':lessonId', element: <Lesson /> },
+                ] },
+            { path: 'homeworks', children: [
+                    { path: '', element: <Homeworks /> },
+                    { path: ':homeworkId', element: <Lesson /> },
+                ] },
+        ] },
+    { path: 'articles', children: [
+            { path: '', element: <Articles /> },
+            { path: ':articleId', element: <Article /> },
+        ] },
+])
 
 function App() {
-  const [count, setCount] = useState(0)
+    const dispatch = useDispatch()
+
+    useQueries([
+        {
+            queryKey: ['js-course/lessons'],
+            queryFn: () => axios.get('http://localhost:3000/js-course/lessons'),
+            onSuccess: ({ data }) => {
+                dispatch({ type: SET_JS_COURSE_LESSONS, payload: data })
+            } },
+        {
+            queryKey: ['js-course/homeworks'],
+            queryFn: () => axios.get('http://localhost:3000/js-course/homeworks'),
+            onSuccess: ({ data }) => {
+                dispatch({ type: SET_JS_COURSE_HOMEWORKS, payload: data })
+            }
+        },
+        {
+            queryKey: ['react-course/lessons'],
+            queryFn: () => axios.get('http://localhost:3000/react-course/lessons'),
+            onSuccess: ({ data }) => {
+                dispatch({ type: SET_REACT_COURSE_LESSONS, payload: data })
+            } },
+        {
+            queryKey: ['react-course/homeworks'],
+            queryFn: () => axios.get('http://localhost:3000/react-course/homeworks'),
+            onSuccess: ({ data }) => {
+                dispatch({ type: SET_REACT_COURSE_HOMEWORKS, payload: data })
+            }
+        }
+    ])
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+      <Box className='appBox' sx={{ display: 'flex', flexDirection: 'column', width: '100%', height: '100%' }}>
+          <Header className='headerBox'/>
+          <Box sx={{ pt: '90px', display: 'flex', flex: 1 }}>
+              <NavigationMenu/>
+              <Box sx={{ display: 'flex', flex: 1, background: '#f2edf3', ml: '250px', p: '44px 34px', flexDirection: 'column', width: '100%' }}>
+                  <Router />
+                  <Footer/>
+              </Box>
+          </Box>
+      </Box>
   )
 }
 

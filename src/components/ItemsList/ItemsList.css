@@ -1,0 +1,35 @@
+.items-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.items-list-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.items-list-icon-wrapper {
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    border-radius: 4px;
+    margin-right: 8px;
+    text-align: center;
+    box-shadow: 0px 3px 8.3px 0.7px rgba(163, 93, 255, 0.35);
+    background: linear-gradient(to right, #da8cff, #9a55ff) !important;
+}
+
+.items-list-icon--lessons:before {
+    content: "\F31E";
+    content: "JS";
+    color: white;
+    line-height: 45px;
+}
+
+.items-list-records {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}

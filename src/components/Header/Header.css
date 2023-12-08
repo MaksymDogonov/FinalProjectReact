@@ -1,0 +1,42 @@
+header {
+    padding: 10px 30px;
+    display: flex;
+    height: 70px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    z-index: 1;
+}
+.logo{
+    width: 100px;
+    margin: auto 70px;
+    display: inline-block;
+}
+
+.menu-btn, .btn {
+    padding: 0;
+    border: none;
+    background-color: rgba(28,28,28,0);
+    width: 15px;
+    margin-left: 30px;
+}
+
+.user {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    margin: auto 0 auto auto;
+    max-width: 100%;
+    text-align: center;
+}
+header li {
+    margin-right: 10px;
+    max-width: 100%
+}
+
+header img {
+    max-width: 100%
+}
