@@ -5,19 +5,17 @@ UI Фреймворки на выбор:
 https://mui.com/
 https://rsuitejs.com/
 https://ant.design/
-API Service - https://mockapi.io/
+API Service - https://mockapi.io/ или любой другой
 
 Стек:
 
 React
 Redux
 react-router
-RTK Query
 prettier
 eslint (airbnb)
 Git
 Git Flow: GitHub branching strategy
-SCSS modules
 icon font from the framework
 Charts lib - по вашему выбору https://react-chartjs-2.js.org/
 Вам нужно придерживаться той структуры файлов которую мы изучали на предыдущих уроках.
