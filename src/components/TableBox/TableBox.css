@@ -1,6 +1,6 @@
 .reactBox {
     background: #fff;
-    padding: 20px;
+    padding: 40px;
     border-radius: 5px;
     margin-bottom: 40px;
 }
@@ -8,8 +8,6 @@
 .reactIcon {
     width: 40px;
     border-radius: 15%;
-    margin-top: 25px;
-    margin-left: 25px;
 }
 
 .reactElement {

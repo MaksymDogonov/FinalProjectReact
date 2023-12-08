@@ -5,7 +5,8 @@ import {useParams} from "react-router-dom";
 import {useMemo} from "react";
 import ReactPlayer from 'react-player/youtube'
 import {getCourseExtras} from "../../utils";
-import {Footer} from "../Footer/Footer.jsx";
+import Table from '@mui/joy/Table';
+import Button from "@mui/joy/Button";
 
 const Lesson = () => {
     const { lessonId, courseKey } = useParams()
@@ -48,12 +49,37 @@ const Lesson = () => {
                     {!!lesson.homeworksIds.length && (
                         <Card className="lesson-homeworks-wrapper">
                             <Typography fontSize={18} fontWeight={500}>Lesson's homeworks</Typography>
+                            <Table sx={{'& tr > *:not(:first-child)': {textAlign: 'right'}}}>
+                                <thead>
+                                <tr className='nameColemn'>
+                                    <th style={{width: '30%'}}>Название</th>
+                                    <th>Дата</th>
+                                    <th>Сложность</th>
+                                    <th></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {homeworksRecords.map((lesson) => (
+                                    <tr key={lesson.title}>
+                                        <td>{lesson.title}</td>
+                                        <td>{lesson.date}</td>
+                                        <td>{lesson.complexity}</td>
+                                        <td className="btnsColumn">
+                                            <Button className='buttonInColumn'
+                                                    color="primary"
+                                                    onClick={() => navigate(`/${entityKey}/lessons/${lesson.id}`)}
+                                                    variant="solid"
+                                            >&#8594;</Button>
+                                        </td>
+                                    </tr>
+                                ))}
+                                </tbody>
+                            </Table>
                             <Typography color="#198ae3" fontSize={18} fontWeight={500}>Total number: {lesson.homeworksIds.length}</Typography>
                         </Card>
                     )}
                 </Box>
             )}
-            <Footer/>
         </Box>
     )
 }

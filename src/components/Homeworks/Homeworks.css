@@ -1,0 +1,19 @@
+.homework-chip {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+.homework-details-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.homework-btn {
+    padding: 14px 40px !important;
+    margin-top: 20px !important;
+    font-size: 14px !important;
+    background: linear-gradient(to right, #da8cff, #9a55ff);
+    text-transform: none !important;
+    color: #fff !important;
+}

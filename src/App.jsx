@@ -12,6 +12,8 @@ import {SET_JS_COURSE_HOMEWORKS, SET_JS_COURSE_LESSONS, SET_REACT_COURSE_LESSONS
 import DashboardPage from "./components/DashboardPage/DashboardPage.jsx";
 import Articles from "./components/Articles/Articles";
 import Article from "./components/Article/Article";
+import {Footer} from "./components/Footer/Footer.jsx";
+import Homeworks from "./components/Homeworks/Homeworks.jsx";
 
 
 const Router = () => useRoutes([
@@ -21,6 +23,10 @@ const Router = () => useRoutes([
             { path: 'lessons', children: [
                     { path: '', element: <Lessons /> },
                     { path: ':lessonId', element: <Lesson /> },
+                ] },
+            { path: 'homeworks', children: [
+                    { path: '', element: <Homeworks /> },
+                    { path: ':homeworkId', element: <Lesson /> },
                 ] },
         ] },
     { path: 'articles', children: [
@@ -61,38 +67,6 @@ function App() {
         }
     ])
 
-    // useQuery({
-    //     queryKey: ['js-course/lessons'],
-    //     queryFn: () => axios.get('http://localhost:3000/js-course/lessons'),
-    //     onSuccess: ({ data }) => {
-    //         dispatch({ type: SET_JS_COURSE_LESSONS, payload: data })
-    //     }
-    // })
-    //
-    // useQuery({
-    //     queryKey: ['js-course/homeworks'],
-    //     queryFn: () => axios.get('http://localhost:3000/js-course/homeworks'),
-    //     onSuccess: ({ data }) => {
-    //         dispatch({ type: SET_JS_COURSE_HOMEWORKS, payload: data })
-    //     }
-    // })
-    //
-    // useQuery({
-    //     queryKey: ['react-course/lessons'],
-    //     queryFn: () => axios.get('http://localhost:3000/js-course/lessons'),
-    //     onSuccess: ({ data }) => {
-    //         dispatch({ type: SET_JS_COURSE_LESSONS, payload: data })
-    //     }
-    // })
-    //
-    // useQuery({
-    //     queryKey: ['react-course/homeworks'],
-    //     queryFn: () => axios.get('http://localhost:3000/js-course/homeworks'),
-    //     onSuccess: ({ data }) => {
-    //         dispatch({ type: SET_JS_COURSE_HOMEWORKS, payload: data })
-    //     }
-    // })
-
   return (
       <Box className='appBox' sx={{ display: 'flex', flexDirection: 'column', width: '100%', height: '100%' }}>
           <Header className='headerBox'/>
@@ -100,6 +74,7 @@ function App() {
               <NavigationMenu/>
               <Box sx={{ display: 'flex', flex: 1, background: '#f2edf3', ml: '250px', p: '44px 34px', flexDirection: 'column', width: '100%' }}>
                   <Router />
+                  <Footer/>
               </Box>
           </Box>
       </Box>

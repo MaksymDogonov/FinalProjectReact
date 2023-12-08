@@ -3,8 +3,9 @@ import {Box, Button, Chip, Typography} from "@mui/material";
 import {useNavigate, useParams} from "react-router-dom";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import camelCase from "lodash.camelcase";
+import LinearProgress from '@mui/material/LinearProgress';
 
-const JsCourseChipComponent = ({ record }) => {
+const CourseChipComponent = ({ record }) => {
     const { courseKey } = useParams()
     const { courseName } = getCourseExtras(courseKey)
     const homeworksRecords = useSelector((state) => state[`${courseName}Homeworks`])
@@ -22,7 +23,7 @@ const JsCourseChipComponent = ({ record }) => {
 
 }
 
-const JsCourseDetailsComponent = ({record}) => {
+const CourseDetailsComponent = ({record}) => {
     return (
         <Box>
             <Typography component="span" fontSize={13}>Lesson date: </Typography>
@@ -31,7 +32,7 @@ const JsCourseDetailsComponent = ({record}) => {
     )
 }
 
-const JsCourseButtonComponent = ({record}) => {
+const CourseButtonComponent = ({record}) => {
     const navigate = useNavigate()
 
     return (
@@ -41,34 +42,78 @@ const JsCourseButtonComponent = ({record}) => {
     )
 }
 
-const titles = {
+const courseTitles = {
     'jsCourse': 'JS Course / Уроки',
-    'reactCourse': 'JS Course / Уроки',
+    'reactCourse': 'React Course / Уроки',
 }
 
-const components = {
-    'jsCourse': {
-        ChipComponent: JsCourseChipComponent,
-        DetailsComponent: JsCourseDetailsComponent,
-        ButtonComponent: JsCourseButtonComponent,
-    },
-    'reactCourse': {
-        ChipComponent: JsCourseChipComponent,
-        DetailsComponent: JsCourseDetailsComponent,
-        ButtonComponent: JsCourseButtonComponent,
-    },
+const HomeworkChipComponent = ({ record }) => {
+    const label = record.isDone === "Done"
+        ? `Done`
+            : record.isDone === 'IsNotDone'
+            ? 'Not Done'
+        : 'In Processing'
+    const color = record.isDone === "Done"
+        ? `success`
+            : record.isDone === 'IsNotDone'
+            ? 'error'
+        : void 0
+
+    return <Chip className="homework-chip" label={label} color={color} />
+
+}
+
+const HomeworkDetailsComponent = ({record}) => {
+    return (
+        <Box className="homework-details-wrapper">
+            <Box>
+                <Typography component="span" fontSize={13}>Lesson date: </Typography>
+                <Typography component="span" fontSize={13} color="#b66dff">{record.date}</Typography>
+            </Box>
+            <Box>
+                <Typography component="span" fontSize={13}>Difficulty: </Typography>
+                <LinearProgress variant="determinate" value={record.difficulty * 10} />
+            </Box>
+        </Box>
+    )
+}
+
+const HomeworkButtonComponent = ({record}) => {
+    const navigate = useNavigate()
+
+    return (
+        <Button className="homework-btn" onClick={() => navigate(`/js-course/homeworks/${record.id}`)}>
+            To homework <ArrowForwardIcon fontSize="small" />
+        </Button>
+    )
+}
+
+const homeworkTitles = {
+    'jsCourse': 'JS Course / Homeworks',
+    'reactCourse': 'React Course / Homeworks',
 }
 
 export const getCourseExtras = (courseKey) => {
     const courseName = camelCase(courseKey)
-    const {ChipComponent, DetailsComponent, ButtonComponent} = components[courseName]
-    const title = titles[courseName]
+    const title = courseTitles[courseName]
 
     return {
         title,
         courseName,
-        ChipComponent,
-        DetailsComponent,
-        ButtonComponent,
+        ChipComponent: CourseChipComponent,
+        DetailsComponent: CourseDetailsComponent,
+        ButtonComponent: CourseButtonComponent,
+    }
+}
+export const getHomeworkExtras = (courseKey) => {
+    const courseName = camelCase(courseKey)
+    const title = homeworkTitles[courseName]
+
+    return {
+        title,
+        courseName,
+        ChipComponent: HomeworkChipComponent,
+        DetailsComponent: HomeworkDetailsComponent,
+        ButtonComponent: HomeworkButtonComponent,
     }
 }

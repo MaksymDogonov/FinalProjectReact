@@ -38,16 +38,16 @@ const NavigationMenu = () => {
                         <div className='userName'>{user}</div>
                         <div className='typeUser'>{role}</div>
                     </div>
-                    <AccountCircleIcon sx={{ fontSize: 20 }}/>
+                    <AccountCircleIcon sx={{fontSize: 20}}/>
                 </li>
                 <li>
                     <div onClick={() => navigate('/')}><span>Дашборд</span></div>
-                    <span className='icons'><HomeIcon sx={{ fontSize: 20 }}/></span>
+                    <span className='icons'><HomeIcon sx={{fontSize: 20}}/></span>
                 </li>
                 <li onClick={toggleMenu3}>JS Course
                     <span className="menu-ping-mark ">{coursesNumber}</span>
                     <span className="arrow arrow1 icons">&lt;</span>
-                    <span><PsychologyAltIcon sx={{ fontSize: 20 }}/></span>
+                    <span><PsychologyAltIcon sx={{fontSize: 20}}/></span>
                 </li>
 
                 {isMenu3Open && (
@@ -56,7 +56,7 @@ const NavigationMenu = () => {
                             <div onClick={() => navigate('/js-course')}>Уроки</div>
                         </li>
                         <li className='iconsLeft'>
-                            <a href="">Домашки</a>
+                            <div onClick={() => navigate('/js-course/homeworks')}>Домашки</div>
                         </li>
                     </ul>
                 )}
@@ -64,7 +64,7 @@ const NavigationMenu = () => {
                 <li className="iconsArrow" onClick={toggleMenu4}>React Course
                     <span className="menu-ping-mark ">{reactCourse}</span>
                     <span className="arrow arrow2 icons">&lt;</span>
-                    <span><PsychologyIcon sx={{ fontSize: 20 }}/></span>
+                    <span><PsychologyIcon sx={{fontSize: 20}}/></span>
                 </li>
                 {isMenu4Open && (
                     <ul style={{listStyleType: 'none', padding: 0}}>
@@ -72,7 +72,7 @@ const NavigationMenu = () => {
                             <div onClick={() => navigate('/react-course')}>Уроки</div>
                         </li>
                         <li className='iconsLeft'>
-                            <a href="">Домашки</a>
+                            <div onClick={() => navigate('/react-course/homeworks')}>Домашки</div>
                         </li>
                     </ul>
                 )}
