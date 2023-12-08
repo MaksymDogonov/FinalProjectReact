@@ -10,6 +10,8 @@ import axios from "axios";
 import {useDispatch} from "react-redux";
 import {SET_JS_COURSE_HOMEWORKS, SET_JS_COURSE_LESSONS} from "./store/store.js";
 import DashboardPage from "./components/DashboardPage/DashboardPage.jsx";
+import Articles from "./components/Articles/Articles";
+import Article from "./components/Article/Article";
 
 const Router = () => useRoutes([
     { path: '', element: <DashboardPage/> },
@@ -19,6 +21,10 @@ const Router = () => useRoutes([
                     { path: '', element: <Lessons /> },
                     { path: ':lessonId', element: <Lesson /> },
                 ] },
+        ] },
+    { path: 'articles', children: [
+            { path: '', element: <Articles /> },
+            { path: ':articleId', element: <Article /> },
         ] },
 ])
 

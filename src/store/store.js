@@ -30,6 +30,63 @@ const reactCourse = []
 
 const reactCourseHomeworks = []
 
+const articles = [
+    { id: 1, title: 'JavaScript — Operator typeof', date: '2022.02.17', categories: ['Data Types', 'JavaScript'], description: 'Operator typeof returns string with operand value type.', views: 10, content: [
+            { id: 1, type: 'group', content: [
+                    { id: 1, type: 'text', content: 'Operator' },
+                    { id: 2, type: 'text', content: ' typeof ', style: 'bold' },
+                    { id: 3, type: 'text', content: 'returns string with operand value type.' },
+                ] },
+            { id: 2, type: 'code', content: `
+const num = 10;
+const bigNum = 10n;
+const str = 'string';
+const undef = undefined;
+const nullVar = null;
+const boolVar = true;
+const symbolVar = Symbol('symbol');
+
+
+
+console.log('num', typeof num);
+console.log('bigNum', typeof bigNum);
+console.log('str', typeof str);
+console.log('undef', typeof undef);
+console.log('nullVar', typeof nullVar);      // здесь баг, object
+console.log('boolVar', typeof boolVar);
+console.log('symbolVar', typeof symbolVar);
+
+
+// Object
+
+const obj = {
+    name: 'John',
+    age: 20
+}
+
+const arr = [10, 20, 30];
+
+console.log('obj', typeof obj);
+console.log('arr', typeof arr);
+
+
+// Function
+
+function sum(a, b) {
+    return a + b;
+}
+
+console.log('sum', typeof sum);
+            ` },
+            { id: 3, type: 'text', content: 'Despite the fact that the typeof operator indicates that there are functions, this function function in any case belongs to the object data type. This was done specifically to make it convenient for us to distinguish between functions and objects.' },
+            { id: 4, type: 'group', content: [
+                    { id: 1, type: 'text', content: 'So typeof can be used as a' },
+                    { id: 2, type: 'text', content: ' typeof', style: 'bold' },
+                    { id: 3, type: 'text', content: '(test_value) function.' },
+                ] }
+        ]  }
+]
+
 export const SET_LESSONS_RATING = 'SET_LESSONS_RATING'
 export const SET_REACT_COURSE_LESSONS = 'SET_REACT_COURSE_LESSONS'
 export const SET_REACT_COURSE_HOMEWORKS = 'SET_REACT_COURSE_HOMEWORKS'
@@ -82,11 +139,13 @@ export const store = createStore(
             }
 
         },
+        articles: (state = articles) => state,
     }),
     {
         user,
         lessonsRating,
         jsCourse,
         jsCourseHomeworks,
+        articles,
     },
 )
