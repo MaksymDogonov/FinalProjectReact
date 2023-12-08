@@ -1,6 +1,7 @@
 import './Header.css'
 import {useState} from 'react';
 import {useSelector} from "react-redux";
+import logo from '../../assets/imagis/logo.svg'
 
 const Header = () => {
     const user = useSelector((state) => state.user.fullName)
@@ -23,7 +24,7 @@ const Header = () => {
         <header className="header">
             <div className="logo">
                 <a href="/" target="">
-                    <img src="https://lms.junjun.io/wp-content/themes/Junjun-lms/assets/images/logo.svg"
+                    <img src={logo}
                          alt="Logo"/>
                 </a>
             </div>

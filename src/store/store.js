@@ -114,7 +114,7 @@ export const store = createStore(
             }
         },
 
-        jsCourse: (state = reactCourse, action) => {
+        jsCourse: (state = jsCourse, action) => {
             switch (action.type) {
                 case SET_JS_COURSE_LESSONS:
                     return [...action.payload]
@@ -146,6 +146,8 @@ export const store = createStore(
         lessonsRating,
         jsCourse,
         jsCourseHomeworks,
+        reactCourse,
+        reactCourseHomeworks,
         articles,
     },
 )

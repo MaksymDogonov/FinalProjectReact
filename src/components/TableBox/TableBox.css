@@ -1,13 +1,13 @@
 .reactBox {
     background: #fff;
-    padding: 20px;
+    padding: 40px;
     border-radius: 5px;
     margin-bottom: 40px;
 }
 
 .reactIcon {
     width: 40px;
-    border-radius: 15%
+    border-radius: 15%;
 }
 
 .reactElement {
@@ -31,7 +31,3 @@
 .nameColemn {
     max-width: 100%;
 }
-
-/*.btnsColumn {*/
-/*    margin-right: 40px;*/
-/*}*/
