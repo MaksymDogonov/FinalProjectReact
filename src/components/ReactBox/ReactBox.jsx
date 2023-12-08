@@ -2,26 +2,11 @@ import './ReactBox.css'
 import Table from '@mui/joy/Table';
 import {Box} from "@mui/material";
 import Button from '@mui/joy/Button';
-import {useSelector} from "react-redux";
 import {store} from "../../store/store.js";
 
 const ReactBox = () => {
 
-    function createData(name, calories, fat, carbs, protein) {
-        return {name, calories, fat, carbs, protein};
-    }
-
-    const rows = [
-        createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-        createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-        createData('Eclair', 262, 16.0, 24, 6.0),
-        createData('Cupcake', 305, 3.7, 67, 4.3),
-        createData('Gingerbread', 356, 16.0, 49, 3.9),
-    ];
-
-    // const reactCourseArray = useSelector(state => state.reactCourse);
     const reactCourse = store.getState().reactCourse;
-    console.log(reactCourse);
 
     return (
         <Box className='reactBox'>
@@ -45,7 +30,7 @@ const ReactBox = () => {
                 </tr>
                 </thead>
                 <tbody>
-                {reactCourse.map((reactCourse) => (
+                {reactCourse.slice(-10).reverse().map((reactCourse) => (
                     <tr key={reactCourse.title}>
                         <td>{reactCourse.title}</td>
                         <td>{reactCourse.date}</td>

@@ -69,7 +69,7 @@ const NavigationMenu = () => {
                 {isMenu4Open && (
                     <ul style={{listStyleType: 'none', padding: 0}}>
                         <li className='iconsLeft'>
-                            <a href="">Уроки</a>
+                            <div onClick={() => navigate('/react-course')}>Уроки</div>
                         </li>
                         <li className='iconsLeft'>
                             <a href="">Домашки</a>

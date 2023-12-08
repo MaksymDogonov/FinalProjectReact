@@ -88,5 +88,7 @@ export const store = createStore(
         lessonsRating,
         jsCourse,
         jsCourseHomeworks,
+        reactCourse,
+        reactCourseHomeworks,
     },
 )
