@@ -1,0 +1,33 @@
+.article-chip {
+    display: flex;
+    gap: 10px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+.article-buttons-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.views-btn, .read-btn {
+    padding: 14px 40px !important;
+    margin-top: 20px !important;
+    font-size: 14px !important;
+    background: linear-gradient(to right, #da8cff, #9a55ff);
+    text-transform: none !important;
+    color: #fff !important;
+}
+
+.views-btn {
+    display: flex;
+    gap: 5px;
+    padding: 5px 5px !important;
+}
+
+.lesson-extras {
+    display: flex;
+    justify-content: space-between;
+}
